@@ -1,4 +1,4 @@
-import { nakliyeIlceleri } from '../../../utils/ilceler'; // Yolu klasör derinliğine göre kontrol et
+import { nakliyeIlceleri } from '@/src/utils/ilceler'; // Yolu klasör derinliğine göre kontrol et
 import { notFound } from 'next/navigation';
 
 interface PageProps {
