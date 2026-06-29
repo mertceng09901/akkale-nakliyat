@@ -1,4 +1,4 @@
-import { nakliyeIlceleri } from '../../../utils/ilceler';
+import { nakliyeIlceleri } from '@/src/utils/ilceler';
 
 // Tip tanımlaması
 interface PageProps {
