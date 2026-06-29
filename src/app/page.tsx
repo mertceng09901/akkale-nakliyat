@@ -40,7 +40,7 @@ export default function Home() {
           {nakliyeIlceleri.map((ilce, index) => (
             <Link 
               key={index} 
-              href={`/nakliye-hizmeti/${ilce.slug}`}
+              href={`/nakliyat-hizmeti/${ilce.slug}`}
               className="group flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-blue-500 transition-all duration-200"
             >
               <span className="font-medium text-gray-700 group-hover:text-blue-600">
