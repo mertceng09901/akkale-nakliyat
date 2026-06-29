@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { nakliyeIlceleri } from '@/utils/ilceler';
+import { nakliyeIlceleri } from '../utils/ilceler';
 
 export default function HomePage() {
   return (

@@ -1,4 +1,4 @@
-import { nakliyeIlceleri } from '@/utils/ilceler'; 
+import { nakliyeIlceleri } from '../../../utils/ilceler';
 import { notFound } from 'next/navigation';
 
 // Next.js 15+ için params Promise yapısı
