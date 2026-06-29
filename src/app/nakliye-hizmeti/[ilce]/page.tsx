@@ -1,7 +1,7 @@
 import { nakliyeIlceleri } from '../../../utils/ilceler';
 import { notFound } from 'next/navigation';
+import IletisimFormu from '../../../components/IletisimFormu'; // Formunu buraya dahil et
 
-// Next.js 15+ için params Promise yapısı
 export default async function Page({ params }: { params: Promise<{ ilce: string }> }) {
   const { ilce } = await params;
   const ilceVerisi = nakliyeIlceleri.find((i) => i.slug === ilce);
@@ -16,19 +16,16 @@ export default async function Page({ params }: { params: Promise<{ ilce: string 
         <h1 className="text-3xl font-extrabold text-gray-900 mb-6">
           {ilceVerisi.isim} Evden Eve Nakliyat
         </h1>
-        <p className="text-gray-600">
-          {ilceVerisi.isim} bölgesinde profesyonel nakliyat hizmeti.
+        <p className="text-gray-600 mb-8">
+          {ilceVerisi.isim} bölgesinde profesyonel nakliyat hizmeti için doğru yerdesiniz.
         </p>
+
+        {/* Teklif formu burada geri gelecek */}
+        <div className="mt-8 border-t pt-8">
+          <h2 className="text-2xl font-bold mb-4">Hemen Teklif Alın</h2>
+          <IletisimFormu /> 
+        </div>
       </div>
     </main>
   );
-}
-
-// SEO için
-export async function generateMetadata({ params }: { params: Promise<{ ilce: string }> }) {
-  const { ilce } = await params;
-  const ilceVerisi = nakliyeIlceleri.find((i) => i.slug === ilce);
-  return {
-    title: ilceVerisi ? `${ilceVerisi.isim} Nakliyat` : "Sayfa Bulunamadı",
-  };
 }
