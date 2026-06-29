@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Nef Nakliyat - SEO Odaklı Nakliye Platformu
 
-## Getting Started
+Nef Nakliyat, İstanbul genelinde evden eve nakliyat hizmetleri sunan, **Next.js** tabanlı, yüksek performanslı ve SEO uyumlu bir web platformudur.
 
-First, run the development server:
+## 🛠 Kullanılan Teknolojiler
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Dil:** TypeScript
+* **Stil:** Tailwind CSS
+* **Dağıtım:** Vercel
+* **SEO:** Dinamik Meta Etiketleri & Canonical URL Yapısı
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 💡 Temel Özellikler
+* **Dinamik Rota Yönetimi:** İstanbul'un tüm ilçeleri için otomatik oluşturulan, SEO uyumlu sayfa yapıları.
+* **Server-Side Rendering (SSR):** Google botları için optimize edilmiş, hızlı içerik sunumu.
+* **Dinamik SEO:** Her ilçe sayfası için özelleştirilmiş `title`, `description` ve `canonical` etiketleri.
+* **Hızlı ve Modern Arayüz:** Tailwind CSS ile mobil uyumlu, temiz ve kullanıcı odaklı tasarım.
+* **İletişim Formu:** Kullanıcıların kolayca teklif alabilmesini sağlayan entegre form yapısı.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Proje Yapısı
+```text
+nef-nakliyat/
+├── src/
+│   ├── app/                # Next.js App Router sayfaları
+│   │   ├── nakliye-hizmeti/[ilce]/page.tsx  # Dinamik ilçe sayfaları
+│   │   └── page.tsx        # Ana sayfa
+│   ├── components/         # Tekrar kullanılabilir bileşenler (Form vb.)
+│   └── utils/              # İlçe verileri ve slug yardımcıları
+├── public/                 # Statik dosyalar
+└── package.json
