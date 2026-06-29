@@ -14,7 +14,7 @@ export default function sitemap() {
 
   // 2. İlçe Sayfaları (Dinamik SSR Rotalar)
   const ilceSayfalari = nakliyeIlceleri.map((ilce) => ({
-    url: `${baseUrl}/nakliyat-hizmeti/${ilce.slug}`,
+    url: `${baseUrl}/nakliye-hizmeti/${ilce.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8, // Alt hizmet sayfaları için ideal öncelik değeri

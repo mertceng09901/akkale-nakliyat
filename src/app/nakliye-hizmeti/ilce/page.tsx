@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${ilceAdi} Evden Eve Nakliyat | Nef Nakliyat`,
     description: `${ilceAdi} bölgesinde sigortalı, asansörlü ve profesyonel evden eve nakliyat hizmeti. Hemen fiyat teklifi alın.`,
     alternates: {
-      canonical: `https://www.nefnakliyat.com/nakliyat-hizmeti/${slug}`, // Burası klasör isminle aynı olmalı
+      canonical: `https://www.nefnakliyat.com/nakliye-hizmeti/${slug}`, // Burası klasör isminle aynı olmalı
     },
   };
 }
