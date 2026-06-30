@@ -46,12 +46,12 @@ const testimonials = [
 ];
 
 const services = [
-  { icon: '🏠', title: 'Evden Eve Nakliyat', desc: 'Uzman ekibimiz eşyalarınızı özel paketleme materyalleriyle kırılma ve çizilme riskini minimize ederek taşır.', href: '/#hizmetler', color: '#f59e0b' },
-  { icon: '🚛', title: 'Şehirler Arası Nakliyat', desc: "Türkiye'nin her noktasına ulaşan taşıma ağımız ile eşyalarınızı belirlenen tarihte güvenle teslim ediyoruz.", href: '/#hizmetler', color: '#ef4444' },
-  { icon: '📦', title: 'Parça Eşya Taşıma', desc: 'Az sayıda eşyası olan müşterilerimiz için ekonomik ve özenli parça eşya taşıma çözümleri sunuyoruz.', href: '/#hizmetler', color: '#8b5cf6' },
-  { icon: '🏢', title: 'Ofis Taşıma', desc: 'İş günü kaybı yaşamadan ofisinizi yeni adresine profesyonelce taşıyoruz.', href: '/#hizmetler', color: '#06b6d4' },
-  { icon: '🎹', title: 'Piyano Taşıma', desc: 'Hassas ve değerli piyanoları özel ekipmanlarla güvenle taşıyan uzman ekibimiz emrinizdedir.', href: '/#hizmetler', color: '#10b981' },
-  { icon: '🛡️', title: 'Sigortalı Taşıma', desc: 'Tüm taşımalarımız sigorta güvencesi altındadır. Eşyalarınıza zarar gelmesi durumunda tam tazminat sağlanır.', href: '/#hizmetler', color: '#f97316' },
+  { icon: '🏠', title: 'Evden Eve Nakliyat', desc: 'Uzman ekibimiz eşyalarınızı özel paketleme materyalleriyle kırılma ve çizilme riskini minimize ederek taşır.', href: '/hizmetler/evden-eve-nakliyat', color: '#f59e0b' },
+  { icon: '🚛', title: 'Şehirler Arası Nakliyat', desc: "Türkiye'nin her noktasına ulaşan taşıma ağımız ile eşyalarınızı belirlenen tarihte güvenle teslim ediyoruz.", href: '/hizmetler/sehirler-arasi-nakliyat', color: '#ef4444' },
+  { icon: '📦', title: 'Parça Eşya Taşıma', desc: 'Az sayıda eşyası olan müşterilerimiz için ekonomik ve özenli parça eşya taşıma çözümleri sunuyoruz.', href: '/hizmetler/parca-esya-tasima', color: '#8b5cf6' },
+  { icon: '🏢', title: 'Ofis Taşıma', desc: 'İş günü kaybı yaşamadan ofisinizi yeni adresine profesyonelce taşıyoruz.', href: '/hizmetler/ofis-tasima', color: '#06b6d4' },
+  { icon: '🎹', title: 'Piyano Taşıma', desc: 'Hassas ve değerli piyanoları özel ekipmanlarla güvenle taşıyan uzman ekibimiz emrinizdedir.', href: '/hizmetler/piyano-tasima', color: '#10b981' },
+  { icon: '🛡️', title: 'Sigortalı Taşıma', desc: 'Tüm taşımalarımız sigorta güvencesi altındadır. Eşyalarınıza zarar gelmesi durumunda tam tazminat sağlanır.', href: '/hizmetler/sigortali-tasima', color: '#f97316' },
 ];
 
 const features = [

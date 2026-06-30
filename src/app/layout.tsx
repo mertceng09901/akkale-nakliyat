@@ -134,10 +134,17 @@ export default function RootLayout({
                 <h4 style={{ color: '#fbbf24', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>
                   Hizmetlerimiz
                 </h4>
-                {['Evden Eve Nakliyat', 'Şehirler Arası Nakliyat', 'Ofis Taşıma', 'Piyano Taşıma', 'Parça Eşya', 'Sigortalı Taşıma'].map((item) => (
-                  <div key={item} style={{ marginBottom: '10px' }}>
-                    <Link href={`/#hizmetler`} className="footer-link">
-                      → {item}
+                {[
+                  { label: 'Evden Eve Nakliyat', slug: 'evden-eve-nakliyat' },
+                  { label: 'Şehirler Arası Nakliyat', slug: 'sehirler-arasi-nakliyat' },
+                  { label: 'Ofis Taşıma', slug: 'ofis-tasima' },
+                  { label: 'Piyano Taşıma', slug: 'piyano-tasima' },
+                  { label: 'Parça Eşya Taşıma', slug: 'parca-esya-tasima' },
+                  { label: 'Sigortalı Taşıma', slug: 'sigortali-tasima' },
+                ].map((item) => (
+                  <div key={item.slug} style={{ marginBottom: '10px' }}>
+                    <Link href={`/hizmetler/${item.slug}`} className="footer-link">
+                      → {item.label}
                     </Link>
                   </div>
                 ))}
