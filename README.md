@@ -1,15 +1,15 @@
 <div align="center">
 
-# 🚚 Nef Nakliyat
+# 🚚 Akkale Nakliyat
 
 ### İstanbul Evden Eve Nakliyat — Premium Web Sitesi
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://nef-nakliyat.vercel.app)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://akkale-nakliyat.vercel.app)
 
-**🌐 Canlı Site → [nef-nakliyat.vercel.app](https://nef-nakliyat.vercel.app)**
+**🌐 Canlı Site → [akkale-nakliyat.vercel.app](https://akkale-nakliyat.vercel.app)**
 
 </div>
 
@@ -86,8 +86,9 @@ Google Fonts     — Playfair Display + Inter
 ## 📁 Proje Yapısı
 
 ```
-nef-nakliyat/
+akkale-nakliyat/
 ├── public/
+│   ├── logo-real.png            # Akkale Nakliyat Logosu
 │   ├── hero-truck.png           # Hero arka plan görseli
 │   ├── evden-eve-nakliyat.png   # Hizmet görselleri
 │   ├── sehirler-arasi-nakliyat.png
@@ -132,8 +133,8 @@ nef-nakliyat/
 
 ```bash
 # Repoyu klonlayın
-git clone https://github.com/mertceng09901/nef-nakliyat.git
-cd nef-nakliyat
+git clone https://github.com/mertceng09901/akkale-nakliyat.git
+cd akkale-nakliyat
 
 # Bağımlılıkları yükleyin
 npm install
@@ -187,7 +188,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your@gmail.com
 SMTP_PASS=your-app-password
-CONTACT_EMAIL=info@nefnakliyat.com
+CONTACT_EMAIL=info@akkalenakliyat.com
 ```
 
 ---
@@ -252,8 +253,8 @@ Bu proje **MIT Lisansı** altında lisanslanmıştır.
 
 <div align="center">
 
-**Nef Nakliyat** — İstanbul'un Güvenilir Nakliyat Firması 🚚
+**Akkale Nakliyat** — İstanbul'un Güvenilir Nakliyat Firması 🚚
 
-[![Website](https://img.shields.io/badge/Website-nef--nakliyat.vercel.app-orange?style=flat-square)](https://nef-nakliyat.vercel.app)
+[![Website](https://img.shields.io/badge/Website-akkale--nakliyat.vercel.app-yellow?style=flat-square)](https://akkale-nakliyat.vercel.app)
 
 </div>

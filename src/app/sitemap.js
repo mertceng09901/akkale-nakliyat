@@ -2,7 +2,7 @@ import { nakliyeIlceleri } from '../utils/ilceler';
 
 export default function sitemap() {
   // Projeyi canlıya aldığında burayı gerçek domaininle değiştirmelisin
-  const baseUrl = 'https://www.nefnakliyat.com';
+  const baseUrl = 'https://www.akkalenakliyat.com';
 
   // 1. Ana Sayfa (Statik)
   const anaSayfa = {

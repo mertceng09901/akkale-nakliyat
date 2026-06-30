@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ClipboardList, CheckCircle2, Loader2, Send, AlertTriangle, Lock } from 'lucide-react';
 
 export default function IletisimFormu() {
   const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ export default function IletisimFormu() {
     }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-        <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>📋</div>
+        <div style={{ marginBottom: '10px', display: 'flex', justifyContent: 'center', color: '#facc15' }}><ClipboardList size={40} /></div>
         <h3 style={{
           fontFamily: "'Playfair Display', serif",
           fontSize: '1.4rem',
@@ -96,7 +97,7 @@ export default function IletisimFormu() {
 
       {durum?.tip === 'basarili' ? (
         <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '16px' }}>✅</div>
+          <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center', color: '#10b981' }}><CheckCircle2 size={64} /></div>
           <h4 style={{ color: '#10b981', fontSize: '1.2rem', marginBottom: '8px', fontWeight: 700 }}>
             Talebiniz Alındı!
           </h4>
@@ -123,7 +124,7 @@ export default function IletisimFormu() {
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
 
           <div>
-            <label style={labelStyle}>Ad Soyad <span style={{ color: '#ef4444' }}>*</span></label>
+            <label style={labelStyle}>Ad Soyad <span style={{ color: '#eab308' }}>*</span></label>
             <input
               required
               type="text"
@@ -138,7 +139,7 @@ export default function IletisimFormu() {
           </div>
 
           <div>
-            <label style={labelStyle}>Telefon Numarası <span style={{ color: '#ef4444' }}>*</span></label>
+            <label style={labelStyle}>Telefon Numarası <span style={{ color: '#eab308' }}>*</span></label>
             <input
               required
               type="tel"
@@ -200,7 +201,7 @@ export default function IletisimFormu() {
             type="submit"
             style={{
               width: '100%',
-              background: yukleniyor ? 'rgba(245,158,11,0.5)' : 'linear-gradient(135deg, #f59e0b, #ef4444)',
+              background: yukleniyor ? 'rgba(245,158,11,0.5)' : 'linear-gradient(135deg, #facc15, #eab308)',
               color: 'white',
               fontWeight: 700,
               fontSize: '1rem',
@@ -228,7 +229,7 @@ export default function IletisimFormu() {
               (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 4px 20px rgba(245,158,11,0.35)';
             }}
           >
-            {yukleniyor ? '⏳ Gönderiliyor...' : '🎯 Teklif İste — Ücretsiz'}
+            {yukleniyor ? <><Loader2 size={20} className="animate-spin" /> Gönderiliyor...</> : <><Send size={20} /> Teklif İste — Ücretsiz</>}
           </button>
 
           {durum?.tip === 'hata' && (
@@ -241,12 +242,14 @@ export default function IletisimFormu() {
               fontSize: '0.88rem',
               textAlign: 'center',
             }}>
-              ⚠️ {durum.mesaj}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                <AlertTriangle size={16} /> {durum.mesaj}
+              </div>
             </div>
           )}
 
-          <p style={{ textAlign: 'center', fontSize: '0.75rem', color: '#475569', marginTop: '4px' }}>
-            🔒 Bilgileriniz güvende — Spam göndermeyiz
+          <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', textAlign: 'center', fontSize: '0.75rem', color: '#475569', marginTop: '4px' }}>
+            <Lock size={12} /> Bilgileriniz güvende — Spam göndermeyiz
           </p>
         </form>
       )}

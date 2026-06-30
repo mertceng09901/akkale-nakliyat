@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import IletisimFormu from '../../../components/IletisimFormu';
+import { Phone, BookOpen, Settings, MessageCircle, Mail, Clock, HelpCircle, FileText, ChevronRight } from 'lucide-react';
 
 export async function generateMetadata({ params }: { params: Promise<{ hizmet: string }> }): Promise<Metadata> {
   const { hizmet } = await params;
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ hizmet: s
   return {
     title: data.metaTitle,
     description: data.metaDesc,
-    keywords: `${data.baslik}, istanbul nakliyat, nef nakliyat`,
+    keywords: `${data.baslik}, istanbul nakliyat, akkale nakliyat`,
   };
 }
 
@@ -60,7 +61,7 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
             <span style={{ color: '#475569' }}>›</span>
             <Link href="/#hizmetler" className="nav-link" style={{ fontSize: '0.82rem' }}>Hizmetler</Link>
             <span style={{ color: '#475569' }}>›</span>
-            <span style={{ color: '#fbbf24' }}>{data.baslik}</span>
+            <span style={{ color: '#facc15' }}>{data.baslik}</span>
           </div>
 
           <div style={{
@@ -70,7 +71,7 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
             letterSpacing: '2px', textTransform: 'uppercase' as const,
             padding: '6px 16px', borderRadius: '50px', marginBottom: '20px',
           }}>
-            {data.icon} Nef Nakliyat Hizmeti
+            {data.icon} Akkale Nakliyat Hizmeti
           </div>
 
           <h1 style={{
@@ -90,11 +91,11 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
           </p>
 
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-            <a href="tel:+905301234567" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
-              📞 Hemen Ara
+            <a href="tel:+905301234567" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 32px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Phone size={20} /> Hemen Ara
             </a>
-            <a href="#teklif" className="btn-outline" style={{ padding: '13px 31px' }}>
-              💰 Ücretsiz Teklif Al
+            <a href="#teklif" className="btn-outline" style={{ padding: '13px 31px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <FileText size={20} /> Ücretsiz Teklif Al
             </a>
           </div>
         </div>
@@ -120,9 +121,9 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
 
             {/* Detay İçerikleri */}
             <div>
-              <div className="section-badge">📖 Hizmet Detayları</div>
+              <div className="section-badge" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><BookOpen size={16} /> Hizmet Detayları</div>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#ffffff', margin: '16px 0 40px' }}>
-                Neden <span style={{ background: `linear-gradient(135deg, ${data.renk}, #ef4444)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Nef Nakliyat</span>?
+                Neden <span style={{ background: `linear-gradient(135deg, ${data.renk}, #eab308)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Akkale Nakliyat</span>?
               </h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
@@ -170,8 +171,8 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
                 padding: '24px',
                 marginBottom: '24px',
               }}>
-                <h3 style={{ color: '#fbbf24', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  💰 Fiyat Bilgisi
+                <h3 style={{ color: '#facc15', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <FileText size={16} /> Fiyat Bilgisi
                 </h3>
                 <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>
                   {data.fiyatBilgisi}
@@ -180,7 +181,9 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
 
               {/* İletişim CTA */}
               <div style={{ background: `linear-gradient(135deg, ${data.renk}15, transparent)`, border: `1px solid ${data.renk}30`, borderRadius: '16px', padding: '24px', textAlign: 'center' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>📞</div>
+                <div style={{ marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>
+                  <Phone size={40} color={data.renk} />
+                </div>
                 <p style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: '16px', fontSize: '0.95rem' }}>Hemen Arayın, Anında Teklif Alın</p>
                 <a href="tel:+905301234567" className="btn-primary" style={{ display: 'block', textAlign: 'center' }}>
                   0530 123 45 67
@@ -195,9 +198,9 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
       <section style={{ padding: '100px 24px', background: '#0f2040' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <div className="section-badge">⚙️ Çalışma Sürecimiz</div>
+            <div className="section-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Settings size={16} /> Çalışma Sürecimiz</div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#ffffff', margin: '16px 0 12px' }}>
-              Adım Adım <span style={{ background: `linear-gradient(135deg, ${data.renk}, #ef4444)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Nasıl Çalışıyoruz?</span>
+              Adım Adım <span style={{ background: `linear-gradient(135deg, ${data.renk}, #eab308)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Nasıl Çalışıyoruz?</span>
             </h2>
             <p style={{ color: '#64748b', fontSize: '1rem' }}>Şeffaf ve planlı bir süreçle her taşıma mükemmel sonuçlanır.</p>
           </div>
@@ -266,7 +269,7 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
               textDecoration: 'none',
               boxShadow: '0 8px 30px rgba(0,0,0,0.3)',
             }}>
-              📞 0530 123 45 67
+              <Phone size={24} /> 0530 123 45 67
             </a>
           </div>
         </div>
@@ -276,7 +279,7 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
       <section style={{ padding: '100px 24px', background: '#0A1628' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <div className="section-badge">❓ Sık Sorulan Sorular</div>
+            <div className="section-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><HelpCircle size={16} /> Sık Sorulan Sorular</div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#ffffff', margin: '16px 0' }}>
               Merak Ettikleriniz
             </h2>
@@ -315,7 +318,7 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 480px', gap: '60px', alignItems: 'start' }}>
 
             <div>
-              <div className="section-badge">📋 Teklif Formu</div>
+              <div className="section-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><FileText size={16} /> Teklif Formu</div>
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#ffffff', margin: '16px 0 20px' }}>
                 Ücretsiz Fiyat <span className="gradient-text">Teklifi Alın</span>
               </h2>
@@ -327,10 +330,10 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
               {/* İletişim Bilgileri */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {[
-                  { icon: '📞', label: 'Telefon', value: '0530 123 45 67', href: 'tel:+905301234567' },
-                  { icon: '💬', label: 'WhatsApp', value: '0530 123 45 67', href: 'https://wa.me/905301234567' },
-                  { icon: '📧', label: 'E-posta', value: 'info@nefnakliyat.com', href: 'mailto:info@nefnakliyat.com' },
-                  { icon: '🕐', label: 'Çalışma Saatleri', value: '7/24 Hizmetinizdeyiz', href: undefined },
+                  { icon: <Phone size={20} />, label: 'Telefon', value: '0530 123 45 67', href: 'tel:+905301234567' },
+                  { icon: <MessageCircle size={20} />, label: 'WhatsApp', value: '0530 123 45 67', href: 'https://wa.me/905301234567' },
+                  { icon: <Mail size={20} />, label: 'E-posta', value: 'info@akkalenakliyat.com', href: 'mailto:info@akkalenakliyat.com' },
+                  { icon: <Clock size={20} />, label: 'Çalışma Saatleri', value: '7/24 Hizmetinizdeyiz', href: undefined },
                 ].map(item => (
                   <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                     <div style={{
@@ -369,8 +372,8 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ hi
           </h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center' }}>
             {hizmetler.filter(h => h.slug !== data.slug).map(h => (
-              <Link key={h.slug} href={`/hizmetler/${h.slug}`} className="district-tag" style={{ fontSize: '0.88rem', padding: '10px 20px' }}>
-                {h.icon} {h.baslik}
+              <Link key={h.slug} href={`/hizmetler/${h.slug}`} className="district-tag" style={{ fontSize: '0.88rem', padding: '10px 20px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                {h.baslik} <ChevronRight size={14} />
               </Link>
             ))}
           </div>

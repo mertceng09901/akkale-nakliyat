@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock, Truck, Shield } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nef Nakliyat | İstanbul Evden Eve Nakliyat",
-  description: "İstanbul'un 39 ilçesinde sigortalı, asansörlü ve güvenilir evden eve nakliyat hizmeti. Nef Nakliyat ile eşyalarınız güvende. Hemen ücretsiz teklif alın!",
-  keywords: "evden eve nakliyat, istanbul nakliyat, sigortalı nakliyat, asansörlü nakliyat, nef nakliyat",
+  title: "Akkale Nakliyat | İstanbul Evden Eve Nakliyat",
+  description: "İstanbul'un 39 ilçesinde sigortalı, asansörlü ve güvenilir evden eve nakliyat hizmeti. Akkale Nakliyat ile eşyalarınız güvende. Hemen ücretsiz teklif alın!",
+  keywords: "evden eve nakliyat, istanbul nakliyat, sigortalı nakliyat, asansörlü nakliyat, akkale nakliyat",
   openGraph: {
-    title: "Nef Nakliyat | İstanbul Evden Eve Nakliyat",
+    title: "Akkale Nakliyat | İstanbul Evden Eve Nakliyat",
     description: "İstanbul'un 39 ilçesinde sigortalı, asansörlü ve güvenilir evden eve nakliyat hizmeti.",
     type: "website",
     locale: "tr_TR",
@@ -48,21 +50,15 @@ export default function RootLayout({
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '72px' }}>
             
             {/* Logo */}
-            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{
-                width: '42px', height: '42px',
-                background: 'linear-gradient(135deg, #f59e0b, #ef4444)',
-                borderRadius: '10px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '20px',
-                boxShadow: '0 4px 15px rgba(245, 158, 11, 0.4)',
-              }}>🚚</div>
-              <div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.4rem', lineHeight: 1 }}>
-                  <span style={{ background: 'linear-gradient(135deg, #f59e0b, #ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>NEF</span>
-                  <span style={{ color: '#ffffff' }}> NAKLİYAT</span>
-                </div>
-                <div style={{ fontSize: '0.65rem', color: '#94a3b8', letterSpacing: '1.5px', textTransform: 'uppercase', marginTop: '1px' }}>İstanbul • Güvenli Taşımacılık</div>
+            <Link href="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+              <div style={{ position: 'relative', width: '220px', height: '60px' }}>
+                <Image 
+                  src="/logo-real.png" 
+                  alt="Akkale Nakliyat Logo" 
+                  fill 
+                  style={{ objectFit: 'contain' }}
+                  priority
+                />
               </div>
             </Link>
 
@@ -82,8 +78,8 @@ export default function RootLayout({
               </Link>
 
               {/* Phone CTA */}
-              <a href="tel:+905301234567" className="btn-primary nav-phone-btn">
-                📞 Hemen Ara
+              <a href="tel:+905301234567" className="btn-primary nav-phone-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Phone size={16} /> Hemen Ara
               </a>
             </nav>
           </div>
@@ -105,9 +101,13 @@ export default function RootLayout({
               
               {/* Brand */}
               <div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.8rem', marginBottom: '12px' }}>
-                  <span style={{ background: 'linear-gradient(135deg, #f59e0b, #ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>NEF</span>
-                  <span style={{ color: '#ffffff' }}> NAKLİYAT</span>
+                <div style={{ position: 'relative', width: '220px', height: '60px', marginBottom: '16px' }}>
+                  <Image 
+                    src="/logo-real.png" 
+                    alt="Akkale Nakliyat Logo" 
+                    fill 
+                    style={{ objectFit: 'contain', objectPosition: 'left' }}
+                  />
                 </div>
                 <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px', maxWidth: '280px' }}>
                   İstanbul&apos;un 39 ilçesinde sigortalı, asansörlü ve profesyonel taşımacılık hizmetleri sunuyoruz.
@@ -131,7 +131,7 @@ export default function RootLayout({
 
               {/* Quick Links */}
               <div>
-                <h4 style={{ color: '#fbbf24', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>
+                <h4 style={{ color: '#facc15', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>
                   Hizmetlerimiz
                 </h4>
                 {[
@@ -152,18 +152,18 @@ export default function RootLayout({
 
               {/* Contact */}
               <div>
-                <h4 style={{ color: '#fbbf24', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>
+                <h4 style={{ color: '#facc15', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>
                   İletişim
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
-                    { icon: '📞', label: 'Telefon', value: '0530 123 45 67' },
-                    { icon: '📧', label: 'E-posta', value: 'info@nefnakliyat.com' },
-                    { icon: '📍', label: 'Adres', value: 'İstanbul, Türkiye' },
-                    { icon: '🕐', label: 'Çalışma', value: '7/24 Hizmetinizdeyiz' },
+                    { icon: <Phone size={16} />, label: 'Telefon', value: '0530 123 45 67' },
+                    { icon: <Mail size={16} />, label: 'E-posta', value: 'info@akkalenakliyat.com' },
+                    { icon: <MapPin size={16} />, label: 'Adres', value: 'İstanbul, Türkiye' },
+                    { icon: <Clock size={16} />, label: 'Çalışma', value: '7/24 Hizmetinizdeyiz' },
                   ].map(({ icon, label, value }) => (
                     <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                      <span style={{ fontSize: '16px', marginTop: '1px' }}>{icon}</span>
+                      <span style={{ marginTop: '1px', color: '#facc15' }}>{icon}</span>
                       <div>
                         <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: '2px' }}>{label}</div>
                         <div style={{ color: '#e2e8f0', fontSize: '0.9rem', fontWeight: 500 }}>{value}</div>
@@ -177,7 +177,7 @@ export default function RootLayout({
             {/* Bottom bar */}
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
               <p style={{ color: '#475569', fontSize: '0.85rem' }}>
-                © {new Date().getFullYear()} Nef Nakliyat A.Ş. Tüm hakları saklıdır.
+                © {new Date().getFullYear()} Akkale Nakliyat A.Ş. Tüm hakları saklıdır.
               </p>
               <div style={{ display: 'flex', gap: '20px' }}>
                 {['Gizlilik Politikası', 'Kullanım Koşulları', 'Çerez Politikası'].map(item => (

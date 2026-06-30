@@ -1,9 +1,12 @@
+import React from 'react';
+import { Home, Truck, Package, Building2, Music, Shield, Settings, CheckCircle, Clock, Search, Briefcase, Key, Star, FileText } from 'lucide-react';
+
 export interface Hizmet {
   slug: string;
   baslik: string;
   kisaAciklama: string;
   gorsel: string;
-  icon: string;
+  icon: React.ReactNode;
   renk: string;
   detaylar: {
     baslik: string;
@@ -13,7 +16,7 @@ export interface Hizmet {
     adim: number;
     baslik: string;
     aciklama: string;
-    icon: string;
+    icon: React.ReactNode;
   }[];
   ozellikler: string[];
   fiyatBilgisi: string;
@@ -31,9 +34,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Evden Eve Nakliyat',
     kisaAciklama: 'İstanbul\'un tüm ilçelerinde sigortalı, asansörlü ve profesyonel ev taşıma hizmeti. Eşyalarınız uzman ellerle güvenle yeni yuvanıza taşınsın.',
     gorsel: '/evden-eve-nakliyat.png',
-    icon: '🏠',
-    renk: '#f59e0b',
-    metaTitle: 'Evden Eve Nakliyat İstanbul | Nef Nakliyat',
+    icon: <Home size={32} strokeWidth={1.5} />,
+    renk: '#facc15',
+    metaTitle: 'Evden Eve Nakliyat İstanbul | Akkale Nakliyat',
     metaDesc: 'İstanbul\'da sigortalı, asansörlü ve profesyonel evden eve nakliyat hizmeti. Uzman ekibimizle güvenli ve hızlı taşınma deneyimi. Ücretsiz teklif alın!',
     detaylar: [
       {
@@ -54,12 +57,12 @@ export const hizmetler: Hizmet[] = [
       },
     ],
     surec: [
-      { adim: 1, baslik: 'Ücretsiz Ekspertiz', aciklama: 'Uzmanımız evinizi ziyaret ederek eşyaları inceler ve size özel fiyat teklifi sunar.', icon: '🔍' },
-      { adim: 2, baslik: 'Planlama', aciklama: 'Taşınma tarihi, araç tipi ve ekip büyüklüğü belirlenir. Detaylı plan hazırlanır.', icon: '📋' },
-      { adim: 3, baslik: 'Paketleme', aciklama: 'Taşınma günü ekibimiz gelir, tüm eşyalar özenle paketlenir ve etiketlenir.', icon: '📦' },
-      { adim: 4, baslik: 'Taşıma', aciklama: 'Eşyalar güvenli araçlarımıza yüklenerek yeni adresinize taşınır.', icon: '🚛' },
-      { adim: 5, baslik: 'Kurulum', aciklama: 'Mobilyalar monte edilir, eşyalar yerlerine yerleştirilir, paketler açılır.', icon: '🏠' },
-      { adim: 6, baslik: 'Kontrol', aciklama: 'Son kontrol yapılır, müşteri memnuniyeti teyit edilir, teslimat tutanağı imzalanır.', icon: '✅' },
+      { adim: 1, baslik: 'Ücretsiz Ekspertiz', aciklama: 'Uzmanımız evinizi ziyaret ederek eşyaları inceler ve size özel fiyat teklifi sunar.', icon: <Search size={24} /> },
+      { adim: 2, baslik: 'Planlama', aciklama: 'Taşınma tarihi, araç tipi ve ekip büyüklüğü belirlenir. Detaylı plan hazırlanır.', icon: <Clock size={24} /> },
+      { adim: 3, baslik: 'Paketleme', aciklama: 'Taşınma günü ekibimiz gelir, tüm eşyalar özenle paketlenir ve etiketlenir.', icon: <Package size={24} /> },
+      { adim: 4, baslik: 'Taşıma', aciklama: 'Eşyalar güvenli araçlarımıza yüklenerek yeni adresinize taşınır.', icon: <Truck size={24} /> },
+      { adim: 5, baslik: 'Kurulum', aciklama: 'Mobilyalar monte edilir, eşyalar yerlerine yerleştirilir, paketler açılır.', icon: <Home size={24} /> },
+      { adim: 6, baslik: 'Kontrol', aciklama: 'Son kontrol yapılır, müşteri memnuniyeti teyit edilir, teslimat tutanağı imzalanır.', icon: <CheckCircle size={24} /> },
     ],
     ozellikler: [
       'Sigortalı taşıma güvencesi',
@@ -85,9 +88,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Şehirler Arası Nakliyat',
     kisaAciklama: 'Türkiye\'nin her noktasına güvenli, sigortalı ve planlı şehirlerarası nakliyat hizmeti. Uzun mesafe taşımacılıkta 10 yılı aşkın deneyim.',
     gorsel: '/sehirler-arasi-nakliyat.png',
-    icon: '🚛',
-    renk: '#ef4444',
-    metaTitle: 'Şehirler Arası Nakliyat | Nef Nakliyat İstanbul',
+    icon: <Truck size={32} strokeWidth={1.5} />,
+    renk: '#eab308',
+    metaTitle: 'Şehirler Arası Nakliyat | Akkale Nakliyat İstanbul',
     metaDesc: 'İstanbul\'dan Türkiye\'nin her iline güvenli ve sigortalı şehirlerarası nakliyat. Profesyonel ekip, modern TIR filosu. Ücretsiz teklif!',
     detaylar: [
       {
@@ -108,12 +111,10 @@ export const hizmetler: Hizmet[] = [
       },
     ],
     surec: [
-      { adim: 1, baslik: 'İletişim & Ekspertiz', aciklama: 'Taşınma detaylarınızı alır, eşya envanteri çıkarır ve size özel fiyat teklifi sunarız.', icon: '📞' },
-      { adim: 2, baslik: 'Rota & Tarih Belirleme', aciklama: 'En uygun güzergah ve taşınma tarihi ortak belirlenir, sözleşme imzalanır.', icon: '🗺️' },
-      { adim: 3, baslik: 'Profesyonel Paketleme', aciklama: 'Uzun yola uygun özel paketleme materyalleriyle tüm eşyalar güvenle paketlenir.', icon: '📦' },
-      { adim: 4, baslik: 'Yükleme & Yola Çıkış', aciklama: 'Eşyalar TIR\'a sabitlenerek yola çıkılır. GPS takip sistemi aktif edilir.', icon: '🚛' },
-      { adim: 5, baslik: 'Varış & Boşaltma', aciklama: 'Hedef şehirde eşyalar özenle boşaltılır ve yeni adrese taşınır.', icon: '📍' },
-      { adim: 6, baslik: 'Kurulum & Teslimat', aciklama: 'Mobilyalar monte edilir, her şey yerli yerine yerleştirilir. Teslimat tutanağı alınır.', icon: '✅' },
+      { adim: 1, baslik: 'Analiz ve Planlama', aciklama: 'Taşınacak eşyalarınızın hacmi, gideceği mesafe ve güzergah analiz edilerek en uygun lojistik planı oluşturulur.', icon: <Search size={24} /> },
+      { adim: 2, baslik: 'Ekstra Güvenlikli Paketleme', aciklama: 'Uzun yola dayanacak şekilde, havalı naylonlar ve güçlendirilmiş kolilerle çok katmanlı paketleme yapılır.', icon: <Shield size={24} /> },
+      { adim: 3, baslik: 'Güvenli Sevkiyat', aciklama: 'Çelik kasalı, kapalı ve nakliyeye özel dizayn edilmiş geniş araçlarımızla eşyalarınız yola çıkar.', icon: <Truck size={24} /> },
+      { adim: 4, baslik: 'Teslimat ve Yerleşim', aciklama: 'Eşyalarınız hedef adreste dikkatle araçtan indirilir, belirlediğiniz odalara yerleştirilir ve montajları tamamlanır.', icon: <CheckCircle size={24} /> },
     ],
     ozellikler: [
       'Türkiye\'nin her iline hizmet',
@@ -138,9 +139,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Ofis Taşıma',
     kisaAciklama: 'Kurumsal yapınızı koruyarak ofisinizi yeni adresine minimum iş kaybıyla taşıyoruz. Hafta sonu ve gece taşıma seçenekleriyle iş kesintisi yaşamayın.',
     gorsel: '/ofis-tasima.png',
-    icon: '🏢',
+    icon: <Building2 size={32} strokeWidth={1.5} />,
     renk: '#06b6d4',
-    metaTitle: 'Ofis Taşıma İstanbul | Kurumsal Nakliyat | Nef Nakliyat',
+    metaTitle: 'Ofis Taşıma İstanbul | Kurumsal Nakliyat | Akkale Nakliyat',
     metaDesc: 'İstanbul\'da profesyonel ofis taşıma hizmeti. İş günü kaybı olmadan, güvenli ve organize ofis nakliyatı. IT ekipmanları, belgeler ve mobilya taşıma.',
     detaylar: [
       {
@@ -161,12 +162,10 @@ export const hizmetler: Hizmet[] = [
       },
     ],
     surec: [
-      { adim: 1, baslik: 'Keşif & Envanter', aciklama: 'Ofisinizi ziyaret ederek tüm mobilya ve ekipman envanteri çıkarılır.', icon: '📋' },
-      { adim: 2, baslik: 'Taşıma Planı', aciklama: 'Departman bazlı taşınma planı hazırlanır. Tarih ve saat belirlenir.', icon: '📅' },
-      { adim: 3, baslik: 'Etiketleme', aciklama: 'Tüm ekipman ve mobilyalar özel etiketlerle işaretlenerek kayıt altına alınır.', icon: '🏷️' },
-      { adim: 4, baslik: 'Paketleme', aciklama: 'Elektronik ekipmanlar anti-statik ambalajla, belgeler mühürlü kutularla paketlenir.', icon: '📦' },
-      { adim: 5, baslik: 'Taşıma', aciklama: 'Yeni ofise güvenli taşıma ve organize boşaltma yapılır.', icon: '🚛' },
-      { adim: 6, baslik: 'Kurulum & Test', aciklama: 'Ekipmanlar kurulur, bağlantılar test edilir. Çalışmaya hazır teslim.', icon: '💼' },
+      { adim: 1, baslik: 'Keşif & Envanter', aciklama: 'Ofisinizdeki bilgisayarlar, evraklar, mobilyalar ve kasalar incelenerek taşıma takvimi ve koordinasyon planı çıkarılır.', icon: <Briefcase size={24} /> },
+      { adim: 2, baslik: 'Numaralandırma', aciklama: 'Tüm departmanların eşyaları ve dosyaları karışıklığı önlemek için barkod veya etiketlerle numaralandırılır.', icon: <FileText size={24} /> },
+      { adim: 3, baslik: 'IT ve Elektronik Taşıma', aciklama: 'Sunucular ve bilgisayarlar statik elektriğe karşı korumalı özel ambalajlarla IT uzmanlarımız eşliğinde paketlenir.', icon: <Settings size={24} /> },
+      { adim: 4, baslik: 'Hızlı Kurulum', aciklama: 'Yeni ofiste tüm eşyalar numaralarına göre departmanlara dağıtılır ve masa/dolap kurulumları hızla tamamlanarak ofis işbaşına hazır hale getirilir.', icon: <Clock size={24} /> },
     ],
     ozellikler: [
       'Hafta sonu ve gece taşıma',
@@ -190,9 +189,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Piyano Taşıma',
     kisaAciklama: 'Yüksek değerli ve hassas piyanoları özel ekipman ve uzman tekniklerle güvenle taşıyoruz. Akort kaybı olmadan, çizilmeden teslim garantisi.',
     gorsel: '/piyano-tasima.png',
-    icon: '🎹',
+    icon: <Music size={32} strokeWidth={1.5} />,
     renk: '#10b981',
-    metaTitle: 'Piyano Taşıma İstanbul | Uzman Piyano Nakliyat | Nef Nakliyat',
+    metaTitle: 'Piyano Taşıma İstanbul | Uzman Piyano Nakliyat | Akkale Nakliyat',
     metaDesc: 'İstanbul\'da profesyonel piyano taşıma hizmeti. Kuyruklu piyano, duvar piyanosu, dijital piyano taşıma. Özel ekipman ve uzman ekip. Güvenli teslimat.',
     detaylar: [
       {
@@ -213,12 +212,10 @@ export const hizmetler: Hizmet[] = [
       },
     ],
     surec: [
-      { adim: 1, baslik: 'Değerlendirme', aciklama: 'Piyano tipi, konumu, kat bilgisi ve varış adresi değerlendirilir.', icon: '🔍' },
-      { adim: 2, baslik: 'Sigortalama', aciklama: 'Piyano değeri üzerinden kapsamlı sigorta yapılır, fotoğraflama tamamlanır.', icon: '🛡️' },
-      { adim: 3, baslik: 'Hazırlık', aciklama: 'Geçiş yolları temizlenir, özel ekipmanlar hazırlanır.', icon: '⚙️' },
-      { adim: 4, baslik: 'Paketleme', aciklama: 'Piyano koruyucu pedler ve özel ambalajla kaplanır.', icon: '📦' },
-      { adim: 5, baslik: 'Güvenli Taşıma', aciklama: 'Piyano araçta sabitlenip titreşim emici malzemelerle korunarak taşınır.', icon: '🚛' },
-      { adim: 6, baslik: 'Yerleştirme & Test', aciklama: 'Yeni konumda piyano yerleştirilir, bacaklar takılır, pedal kontrolleri yapılır.', icon: '🎹' },
+      { adim: 1, baslik: 'Değerlendirme', aciklama: 'Piyanonun türü (duvar, kuyruklu) ve taşınacak merdiven/kapı boşlukları incelenerek gerekli ekipman (askı, kızak) belirlenir.', icon: <Search size={24} /> },
+      { adim: 2, baslik: 'Özel Ambalajlama', aciklama: 'Çizilme ve darbelere karşı piyanonun tüm yüzeyleri koruyucu battaniye ve özel köpüklerle sarılır.', icon: <Shield size={24} /> },
+      { adim: 3, baslik: 'Askılı Taşıma', aciklama: 'Piyano taşıma konusunda özel eğitimli personelimiz, özel askı kayışları kullanarak piyanoyu dengeli bir şekilde taşır.', icon: <Key size={24} /> },
+      { adim: 4, baslik: 'Konumlandırma', aciklama: 'Yeni adreste piyanonuz akustik olarak en uygun ve sizin istediğiniz noktaya hassasiyetle yerleştirilir.', icon: <Star size={24} /> },
     ],
     ozellikler: [
       'Kuyruklu ve duvar piyanoları',
@@ -243,9 +240,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Parça Eşya Taşıma',
     kisaAciklama: 'Az sayıda eşyası olan, tek bir eşya taşıtmak isteyen ya da öğrenci taşınması yapacaklar için ekonomik ve hızlı çözüm.',
     gorsel: '/parca-esya-tasima.png',
-    icon: '📦',
+    icon: <Package size={32} strokeWidth={1.5} />,
     renk: '#8b5cf6',
-    metaTitle: 'Parça Eşya Taşıma İstanbul | Nef Nakliyat',
+    metaTitle: 'Parça Eşya Taşıma İstanbul | Akkale Nakliyat',
     metaDesc: 'İstanbul\'da ekonomik parça eşya taşıma hizmeti. Tek koltuk, koli, beyaz eşya taşıma. Hızlı, güvenli ve uygun fiyatlı.',
     detaylar: [
       {
@@ -266,11 +263,10 @@ export const hizmetler: Hizmet[] = [
       },
     ],
     surec: [
-      { adim: 1, baslik: 'Bilgi Alın', aciklama: 'Taşınacak eşyaları ve adresleri bildirin, anında fiyat öğrenin.', icon: '📞' },
-      { adim: 2, baslik: 'Randevu', aciklama: 'Size en uygun gün ve saatte randevu ayarlanır.', icon: '📅' },
-      { adim: 3, baslik: 'Paketleme', aciklama: 'Eşyalarınız özenle sarılır ve korunur.', icon: '📦' },
-      { adim: 4, baslik: 'Taşıma', aciklama: 'Eşyalarınız güvenle yeni adresinize taşınır.', icon: '🚛' },
-      { adim: 5, baslik: 'Teslimat', aciklama: 'Eşyalar istediğiniz konuma yerleştirilir.', icon: '✅' },
+      { adim: 1, baslik: 'Bilgi Alın', aciklama: 'Taşınacak az sayıdaki eşyanızın hacmi hesaplanır ve güzergah üzerindeki diğer parça eşyalarla planlama yapılır.', icon: <Search size={24} /> },
+      { adim: 2, baslik: 'Paketleme ve Etiketleme', aciklama: 'Eşyalarınız koruyucu malzemelerle paketlenir ve diğer müşterilerin eşyalarıyla karışmaması için isiminizle etiketlenir.', icon: <FileText size={24} /> },
+      { adim: 3, baslik: 'Ekonomik Transfer', aciklama: 'Aynı güzergaha giden aracımıza eşyalarınız dikkatle yüklenir. Bu sayede taşıma maliyeti paylaşılarak ekonomik hale gelir.', icon: <Truck size={24} /> },
+      { adim: 4, baslik: 'Adrese Teslim', aciklama: 'Güzergah sırasına göre eşyalarınız belirtilen tarihte adresinize ulaştırılır ve sağlam bir şekilde teslim edilir.', icon: <CheckCircle size={24} /> },
     ],
     ozellikler: [
       'Tek eşya taşıma imkânı',
@@ -294,9 +290,9 @@ export const hizmetler: Hizmet[] = [
     baslik: 'Sigortalı Eşya Taşıma',
     kisaAciklama: 'Tüm taşımalarımız kapsamlı sigorta güvencesi altındadır. Eşyalarınıza olabilecek her türlü hasar için tam tazminat sağlanır. Gönlünüz rahat olsun.',
     gorsel: '/sigortali-tasima.png',
-    icon: '🛡️',
+    icon: <Shield size={32} strokeWidth={1.5} />,
     renk: '#f97316',
-    metaTitle: 'Sigortalı Eşya Taşıma İstanbul | Nef Nakliyat',
+    metaTitle: 'Sigortalı Eşya Taşıma İstanbul | Akkale Nakliyat',
     metaDesc: 'İstanbul\'da sigortalı nakliyat hizmeti. Tüm eşyalar kapsamlı sigorta güvencesiyle taşınır. Hasar durumunda tam tazminat. Güvenli taşınma.',
     detaylar: [
       {
@@ -309,7 +305,7 @@ export const hizmetler: Hizmet[] = [
       },
       {
         baslik: 'Taşıma Öncesi Durum Tespiti',
-        icerik: 'Taşıma başlamadan önce tüm eşyaların detaylı fotoğraflaması yapılır ve durum raporu hazırlanır. Bu rapor müşteri ve Nef Nakliyat tarafından imzalanır. Böylece taşıma öncesi ve sonrası karşılaştırma yapılabilmekte, herhangi bir anlaşmazlık önlenmektedir.',
+        icerik: 'Taşıma başlamadan önce tüm eşyaların detaylı fotoğraflaması yapılır ve durum raporu hazırlanır. Bu rapor müşteri ve Akkale Nakliyat tarafından imzalanır. Böylece taşıma öncesi ve sonrası karşılaştırma yapılabilmekte, herhangi bir anlaşmazlık önlenmektedir.',
       },
       {
         baslik: 'Değerli Eşya Güvencesi',
