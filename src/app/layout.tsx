@@ -34,7 +34,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen`} style={{ background: '#0A1628', color: '#e2e8f0' }}>
+      <body className={`${inter.className} flex flex-col min-h-screen`} style={{ background: '#ffffff', color: '#1e293b' }}>
 
         {/* GLOBAL NAVBAR */}
         <header style={{

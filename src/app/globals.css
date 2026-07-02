@@ -11,25 +11,23 @@
   --navy-700: #162952;
   --navy-600: #1e3a6e;
   --navy-500: #2952a3;
-  
+
   --gold-400: #facc15;
-  --gold-500: #facc15;
+  --gold-500: #eab308;
   --gold-600: #d97706;
-  
-  --orange-500: #f97316;
-  --orange-600: #ea580c;
-  
+
+  --white:   #ffffff;
+  --off-white: #f8fafc;
+  --light-gray: #f1f5f9;
+
   --accent-gradient: linear-gradient(135deg, #facc15 0%, #eab308 100%);
-  --hero-gradient: linear-gradient(135deg, #050d1a 0%, #0A1628 40%, #1e3a6e 100%);
-  --card-glass: rgba(255, 255, 255, 0.05);
-  --card-border: rgba(255, 255, 255, 0.1);
-  
+  --navy-gradient:   linear-gradient(135deg, #050d1a 0%, #0A1628 40%, #1e3a6e 100%);
+  --gold-shadow: 0 4px 30px rgba(245, 158, 11, 0.35);
+  --card-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --card-shadow-dark: 0 8px 40px rgba(0, 0, 0, 0.35);
+
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  
-  --shadow-gold: 0 4px 30px rgba(245, 158, 11, 0.3);
-  --shadow-navy: 0 20px 60px rgba(5, 13, 26, 0.5);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --font-body:    'Inter', system-ui, sans-serif;
 }
 
 /* =========================================
@@ -48,8 +46,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--navy-900);
-  color: #e2e8f0;
+  background: var(--white);
+  color: #1e293b;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -68,71 +66,83 @@ h1, h2, h3 {
    ========================================= */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
   from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes floatRotate {
+  0%   { transform: translateY(0px) rotateY(0deg); }
+  50%  { transform: translateY(-16px) rotateY(8deg); }
+  100% { transform: translateY(0px) rotateY(0deg); }
 }
 
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.8), 0 0 80px rgba(245, 158, 11, 0.3); }
+  50%       { box-shadow: 0 0 40px rgba(245, 158, 11, 0.8), 0 0 80px rgba(245, 158, 11, 0.3); }
 }
 
 @keyframes shimmer {
-  0% { background-position: -1000px 0; }
+  0%   { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
 }
 
 @keyframes countUp {
   from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 @keyframes truckDrive {
-  0% { transform: translateX(-100px); opacity: 0; }
-  20% { opacity: 1; }
-  100% { transform: translateX(0); opacity: 1; }
+  0%   { transform: translateX(-120px) rotateY(-5deg); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(0) rotateY(0deg); opacity: 1; }
 }
 
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
 @keyframes borderGlow {
   0%, 100% { border-color: rgba(245, 158, 11, 0.3); }
-  50% { border-color: rgba(245, 158, 11, 0.8); }
+  50%       { border-color: rgba(245, 158, 11, 0.8); }
 }
 
 @keyframes slideInNav {
   from { transform: translateY(-100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes box3dSpin {
+  0%   { transform: perspective(600px) rotateX(15deg) rotateY(-20deg); }
+  50%  { transform: perspective(600px) rotateX(10deg) rotateY(20deg); }
+  100% { transform: perspective(600px) rotateX(15deg) rotateY(-20deg); }
 }
 
 /* =========================================
    UTILITY CLASSES
    ========================================= */
 .font-heading { font-family: var(--font-heading); }
-.font-body { font-family: var(--font-body); }
+.font-body    { font-family: var(--font-body); }
 
 .gradient-text {
   background: var(--accent-gradient);
@@ -150,28 +160,47 @@ h1, h2, h3 {
   animation: gradient-shift 4s ease infinite;
 }
 
+/* Glass card — for dark sections */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
 }
 
 .glass-card-dark {
-  background: rgba(10, 22, 40, 0.8);
+  background: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.22);
   border-radius: 16px;
 }
 
+/* Light card — for white sections */
+.light-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.light-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================= */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: var(--accent-gradient);
-  color: white;
+  color: #1a1000;
   font-weight: 700;
   font-family: var(--font-body);
   padding: 14px 32px;
@@ -182,7 +211,7 @@ h1, h2, h3 {
   text-decoration: none;
   font-size: 1rem;
   letter-spacing: 0.5px;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--gold-shadow);
   position: relative;
   overflow: hidden;
 }
@@ -191,14 +220,14 @@ h1, h2, h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 40px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.55);
 }
 
 .btn-primary:hover::before { opacity: 1; }
@@ -221,18 +250,45 @@ h1, h2, h3 {
 }
 
 .btn-outline:hover {
-  background: rgba(251, 191, 36, 0.1);
+  background: rgba(251, 191, 36, 0.12);
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.2);
+  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.25);
 }
 
+/* outline variant for light sections */
+.btn-outline-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #0A1628;
+  font-weight: 600;
+  font-family: var(--font-body);
+  padding: 13px 31px;
+  border-radius: 50px;
+  border: 2px solid #0A1628;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-outline-navy:hover {
+  background: #0A1628;
+  color: #facc15;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   SECTION BADGE
+   ========================================= */
 .section-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #facc15;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #eab308;
   font-size: 0.75rem;
   font-weight: 700;
   font-family: var(--font-body);
@@ -243,20 +299,33 @@ h1, h2, h3 {
   margin-bottom: 16px;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease forwards;
+/* badge for dark sections */
+.section-badge-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(10, 22, 40, 0.08);
+  border: 1px solid rgba(10, 22, 40, 0.18);
+  color: #0A1628;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
+/* ==========================================
+   ANIMATIONS UTILITIES
+   ========================================= */
+.animate-fadeInUp  { animation: fadeInUp  0.8s ease forwards; }
+.animate-float     { animation: float     3s ease-in-out infinite; }
+.animate-pulse-glow{ animation: pulse-glow 2s ease-in-out infinite; }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* =========================================
-   NAV & FOOTER LINKS (CSS-only hover)
+/* ==========================================
+   NAV & FOOTER LINKS
    ========================================= */
 .nav-link {
   color: #94a3b8;
@@ -266,9 +335,7 @@ h1, h2, h3 {
   transition: color 0.2s ease;
   letter-spacing: 0.3px;
 }
-.nav-link:hover {
-  color: #facc15;
-}
+.nav-link:hover { color: #facc15; }
 
 .nav-phone-btn {
   font-size: 0.9rem !important;
@@ -285,9 +352,7 @@ h1, h2, h3 {
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
-.footer-link:hover {
-  color: #facc15;
-}
+.footer-link:hover { color: #facc15; }
 
 .footer-link-sm {
   color: #475569;
@@ -295,11 +360,11 @@ h1, h2, h3 {
   font-size: 0.8rem;
   transition: color 0.2s ease;
 }
-.footer-link-sm:hover {
-  color: #facc15;
-}
+.footer-link-sm:hover { color: #facc15; }
 
-/* WhatsApp button */
+/* ==========================================
+   WHATSAPP BUTTON
+   ========================================= */
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -319,7 +384,9 @@ h1, h2, h3 {
   box-shadow: 0 8px 30px rgba(37,211,102,0.5);
 }
 
-/* Service card on district page */
+/* ==========================================
+   SERVICE CARD (district pages)
+   ========================================= */
 .service-card-ilce {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
@@ -334,7 +401,9 @@ h1, h2, h3 {
   transform: translateY(-4px);
 }
 
-/* District tag links */
+/* ==========================================
+   DISTRICT TAGS (legacy) & CARDS 3D
+   ========================================= */
 .district-tag {
   display: inline-block;
   padding: 7px 16px;
@@ -352,56 +421,144 @@ h1, h2, h3 {
   color: #facc15;
 }
 
-/* =========================================
-   SCROLLBAR
-   ========================================= */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--navy-900);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--gold-600);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-400);
+/* 3D İlçe Kartları */
+.district-card-3d {
+  will-change: transform;
+  transform-style: preserve-3d;
 }
 
-/* =========================================
+/* Hover'da üst accent çizgisini göster */
+.district-card-3d:hover .district-accent-line {
+  opacity: 1 !important;
+}
+
+
+/* ==========================================
+   3D ELEMENTS
+   ========================================= */
+.box-3d-wrapper {
+  perspective: 900px;
+  perspective-origin: 50% 40%;
+}
+
+.box-3d {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: box3dSpin 6s ease-in-out infinite;
+}
+
+.box-3d .face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border-radius: 8px;
+  border: 1px solid rgba(245,158,11,0.4);
+  backface-visibility: hidden;
+}
+
+.box-3d .face.front  {
+  background: linear-gradient(135deg, #1e3a6e, #0A1628);
+  transform: translateZ(100px);
+}
+.box-3d .face.back   {
+  background: linear-gradient(135deg, #162952, #0f2040);
+  transform: rotateY(180deg) translateZ(100px);
+}
+.box-3d .face.right  {
+  background: linear-gradient(135deg, #0f2040, #050d1a);
+  transform: rotateY(90deg) translateZ(100px);
+}
+.box-3d .face.left   {
+  background: linear-gradient(135deg, #050d1a, #0f2040);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.box-3d .face.top    {
+  background: linear-gradient(135deg, #facc15, #eab308);
+  transform: rotateX(90deg) translateZ(100px);
+}
+.box-3d .face.bottom {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Hero 3D truck card */
+.truck-3d-card {
+  background: linear-gradient(145deg, #1e3a6e, #0A1628);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow:
+    8px 8px 0px rgba(234,179,8,0.2),
+    16px 16px 0px rgba(234,179,8,0.08),
+    0 30px 60px rgba(0,0,0,0.5);
+  transform: perspective(900px) rotateY(-6deg) rotateX(2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatRotate 6s ease-in-out infinite;
+}
+
+.truck-3d-card:hover {
+  transform: perspective(900px) rotateY(0deg) rotateX(0deg);
+  box-shadow:
+    4px 4px 0px rgba(234,179,8,0.15),
+    0 40px 80px rgba(0,0,0,0.4);
+}
+
+/* Stats card 3D tilt */
+.stat-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-3d:hover {
+  transform: perspective(400px) translateZ(12px) rotateX(-3deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================= */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: var(--gold-500); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-400); }
+
+/* ==========================================
    SELECTION
    ========================================= */
 ::selection {
   background: rgba(245, 158, 11, 0.3);
-  color: white;
+  color: #1a1000;
 }
 
-/* =========================================
+/* ==========================================
    RESPONSIVE — MOBILE
    ========================================= */
 @media (max-width: 900px) {
-  /* Hero 2-col → 1-col */
   section > div[style*="grid-template-columns: 1fr 420px"] {
     grid-template-columns: 1fr !important;
   }
-  /* Stats 4-col → 2-col */
   section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  /* Neden Biz 2-col → 1-col */
   section > div > div[style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
+  .truck-3d-card {
+    transform: none;
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 @media (max-width: 600px) {
-  .btn-primary, .btn-outline {
+  .btn-primary, .btn-outline, .btn-outline-navy {
     width: 100%;
     justify-content: center;
   }
-  /* Stats 4-col → 1-col */
   section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
