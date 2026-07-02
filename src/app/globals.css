@@ -519,6 +519,67 @@ h1, h2, h3 {
 }
 
 /* ==========================================
+   NAVBAR — RESPONSIVE
+   ========================================= */
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  gap: 16px;
+}
+
+.nav-logo-wrap {
+  position: relative;
+  width: 180px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* ==========================================
+   HERO GRID — RESPONSIVE
+   ========================================= */
+.hero-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ==========================================
+   STATS GRID — RESPONSIVE
+   ========================================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-cell {
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+.stat-cell:last-child {
+  border-right: none;
+}
+
+/* ==========================================
    SCROLLBAR
    ========================================= */
 ::-webkit-scrollbar       { width: 6px; }
@@ -535,31 +596,192 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   RESPONSIVE — MOBILE
+   TABLET — max 1024px
    ========================================= */
-@media (max-width: 900px) {
-  section > div[style*="grid-template-columns: 1fr 420px"] {
-    grid-template-columns: 1fr !important;
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    padding: 80px 24px 60px;
   }
-  section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
+}
+
+/* ==========================================
+   MOBILE — max 768px
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar-inner {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .nav-logo-wrap {
+    width: 140px;
+    height: 42px;
+  }
+
+  /* Nav linkleri mobilde gizle */
+  .desktop-nav-links {
+    display: none;
+  }
+
+  /* Telefon butonunu küçült */
+  .nav-phone-btn {
+    font-size: 0.82rem !important;
+    padding: 9px 16px !important;
+    gap: 6px !important;
+  }
+
+  /* Hero: tek kolon */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    padding: 80px 20px 60px;
+    gap: 0;
+  }
+
+  /* Form kartı mobilde gizle (tel butonu yeterli) */
+  .hero-form-col {
+    display: none;
+  }
+
+  /* Hero H1 boyutunu küçült */
+  .hero-grid h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+
+  /* Butonlar mobilde tam genişlik */
+  .btn-primary,
+  .btn-outline,
+  .btn-outline-navy {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero butonlar satırını dikey yap */
+  .hero-grid > div:first-child > div[style*="display: flex"][style*="gap: 16px"] {
+    flex-direction: column;
+  }
+
+  /* Stats: 2x2 grid */
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .stat-cell {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-cell:nth-child(1),
+  .stat-cell:nth-child(2) {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .stat-cell:nth-child(3),
+  .stat-cell:nth-child(4) {
+    border-bottom: none;
+  }
+  .stat-cell:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.15) !important;
+  }
+
+  /* İstatistik rakamları küçült */
+  .stats-grid .stat-3d div:nth-child(2) {
+    font-size: 2.2rem !important;
+  }
+
+  /* Neden Biz: tek kolon */
   section > div > div[style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
-  .truck-3d-card {
-    transform: none;
-    animation: float 4s ease-in-out infinite;
+
+  /* Özellik kartları: tek kolon */
+  div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 16px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 3D Kutu mobilde küçük göster */
+  .box-3d-wrapper {
+    transform: scale(0.65);
+    margin-bottom: -20px;
+  }
+
+  /* Müşteri yorumu slider min-height azalt */
+  div[style*="minHeight: '240px'"] {
+    min-height: 320px !important;
+  }
+
+  /* Section padding küçült */
+  section[style*="padding: '100px 24px'"] {
+    padding: 64px 20px !important;
+  }
+
+  /* İlçe kartları: 2 kolon */
+  #bolgeler div[style*="grid-template-columns"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* İlçe kartı iç padding küçült */
+  .district-card-3d {
+    padding: 14px 12px !important;
+  }
+
+  /* Hizmet kartları: tek kolon */
+  div[style*="minmax(300px, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer grid: tek kolon */
+  div[style*="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Footer logo küçült */
+  div[style*="width: '220px'"][style*="height: '60px'"] {
+    width: 160px !important;
+    height: 44px !important;
+  }
+
+  /* WhatsApp FAB küçült */
+  a[href*="wa.me"] {
+    width: 52px !important;
+    height: 52px !important;
+    bottom: 20px !important;
+    right: 16px !important;
+    font-size: 24px !important;
   }
 }
 
-@media (max-width: 600px) {
-  .btn-primary, .btn-outline, .btn-outline-navy {
-    width: 100%;
-    justify-content: center;
+/* ==========================================
+   SMALL PHONE — max 420px
+   ========================================= */
+@media (max-width: 420px) {
+  .navbar-inner {
+    padding: 0 12px;
   }
-  section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
-    grid-template-columns: repeat(2, 1fr) !important;
+
+  .nav-logo-wrap {
+    width: 120px;
+    height: 36px;
+  }
+
+  .nav-phone-btn {
+    font-size: 0.78rem !important;
+    padding: 8px 12px !important;
+  }
+
+  .hero-grid {
+    padding: 70px 16px 48px;
+  }
+
+  /* İlçe kartları: tek kolon küçük telefonda */
+  #bolgeler div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .box-3d-wrapper {
+    display: none;
   }
 }
+

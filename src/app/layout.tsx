@@ -47,11 +47,11 @@ export default function RootLayout({
           zIndex: 100,
           animation: 'slideInNav 0.5s ease',
         }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '72px' }}>
+          <div className="navbar-inner">
             
             {/* Logo */}
             <Link href="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-              <div style={{ position: 'relative', width: '220px', height: '60px' }}>
+              <div className="nav-logo-wrap">
                 <Image 
                   src="/logo-real.png" 
                   alt="Akkale Nakliyat Logo" 
@@ -62,26 +62,18 @@ export default function RootLayout({
               </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-              <Link href="/" className="nav-link">
-                Ana Sayfa
-              </Link>
-              <Link href="/#hizmetler" className="nav-link">
-                Hizmetler
-              </Link>
-              <Link href="/#bolgeler" className="nav-link">
-                Bölgelerimiz
-              </Link>
-              <Link href="/#iletisim" className="nav-link">
-                İletişim
-              </Link>
-
-              {/* Phone CTA */}
-              <a href="tel:+905301234567" className="btn-primary nav-phone-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Phone size={16} /> Hemen Ara
-              </a>
+            {/* Desktop Nav Links — mobilde gizli */}
+            <nav className="desktop-nav-links">
+              <Link href="/" className="nav-link">Ana Sayfa</Link>
+              <Link href="/#hizmetler" className="nav-link">Hizmetler</Link>
+              <Link href="/#bolgeler" className="nav-link">Bölgelerimiz</Link>
+              <Link href="/#iletisim" className="nav-link">İletişim</Link>
             </nav>
+
+            {/* Telefon CTA — her zaman görünür */}
+            <a href="tel:+905301234567" className="btn-primary nav-phone-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap' }}>
+              <Phone size={16} /> Hemen Ara
+            </a>
           </div>
         </header>
 

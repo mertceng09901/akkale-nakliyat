@@ -173,7 +173,7 @@ export default function HomePage() {
         <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '480px', height: '480px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(250,204,21,0.18) 0%, transparent 70%)', zIndex: 1 }} />
         <div style={{ position: 'absolute', bottom: '-120px', left: '-80px', width: '520px', height: '520px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(30,58,110,0.5) 0%, transparent 70%)', zIndex: 1 }} />
 
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '100px 24px 60px', display: 'grid', gridTemplateColumns: '1fr 420px', gap: '60px', alignItems: 'center', position: 'relative', zIndex: 2, width: '100%' }}>
+        <div className="hero-grid">
 
           {/* Sol İçerik */}
           <div style={{ animation: 'fadeInLeft 0.8s ease forwards' }}>
@@ -224,8 +224,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Sağ: 3D Teklif Kartı */}
-          <div id="teklif" style={{ animation: 'fadeInRight 0.8s ease 0.2s both' }}>
+          {/* Sağ: 3D Teklif Kartı — mobilde gizli */}
+          <div id="teklif" className="hero-form-col" style={{ animation: 'fadeInRight 0.8s ease 0.2s both' }}>
             <Truck3DCard />
           </div>
         </div>
@@ -244,7 +244,7 @@ export default function HomePage() {
         overflow: 'hidden',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0' }}>
+          <div className="stats-grid">
             {[
               { number: 500, suffix: '+', label: 'Mutlu Müşteri', icon: '😊' },
               { number: 39,  suffix: '',  label: 'İstanbul İlçesi', icon: '📍' },
@@ -253,7 +253,7 @@ export default function HomePage() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className="stat-3d"
+                className="stat-3d stat-cell"
                 style={{
                   padding: '44px 24px',
                   textAlign: 'center',
