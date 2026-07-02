@@ -30,7 +30,30 @@
   --font-body:    'Inter', system-ui, sans-serif;
 }
 
-/* =========================================
+/* ==========================================
+   SECTION BACKGROUND CLASSES — !important
+   garantili renk (mobil dahil)
+   ========================================= */
+.section-white {
+  background: #ffffff !important;
+  color: #1e293b;
+}
+
+.section-light {
+  background: #f8fafc !important;
+  color: #1e293b;
+}
+
+.section-navy {
+  background: linear-gradient(135deg, #0A1628 0%, #0f2040 100%) !important;
+  color: #e2e8f0;
+}
+
+.section-gold {
+  background: linear-gradient(135deg, #facc15 0%, #eab308 60%, #d97706 100%) !important;
+}
+
+/* ==========================================
    RESET & BASE
    ========================================= */
 *, *::before, *::after {
@@ -454,6 +477,11 @@ h1, h2, h3 {
   display: none;
 }
 
+/* Mobil form bölümü — masaüstünde gizli */
+.ilce-mobile-form {
+  display: none;
+}
+
 /* Özellikler grid */
 .ilce-features-grid {
   display: grid;
@@ -808,6 +836,11 @@ h1, h2, h3 {
 
   /* Mobil CTA kutusunu göster */
   .ilce-mobile-cta {
+    display: block !important;
+  }
+
+  /* Mobil form bölümünü göster */
+  .ilce-mobile-form {
     display: block !important;
   }
 

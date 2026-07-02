@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { nakliyeIlceleri } from '../utils/ilceler';
 import { useState, useEffect, useRef } from 'react';
 import { Home, Truck, Package, Building2, Music, Shield, Zap, Award, Rocket, Phone } from 'lucide-react';
+import IletisimFormu from '../components/IletisimFormu';
 
 // ─── Animasyonlu Sayaç ───────────────────────────────────────────────────────
 function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
@@ -204,7 +205,7 @@ export default function HomePage() {
               <a href="tel:+905301234567" className="btn-primary" style={{ fontSize: '1.05rem', padding: '16px 36px' }}>
                 📞 Hemen Ara
               </a>
-              <a href="#teklif" className="btn-outline" style={{ padding: '15px 35px', fontSize: '1.05rem' }}>
+              <a href="#teklif-form" className="btn-outline" style={{ padding: '15px 35px', fontSize: '1.05rem' }}>
                 💰 Ücretsiz Teklif Al
               </a>
             </div>
@@ -272,8 +273,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ══════════════════ TEKLİF FORM — HER CİHAZDA GÖRÜNÜR ══════════════════ */}
+      <section id="teklif-form" className="section-navy">
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'center' }}>
+            {/* Sol: Bilgi */}
+            <div>
+              <div className="section-badge">💰 Ücretsiz Teklif</div>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#ffffff', margin: '16px 0 20px' }}>
+                Hemen <span className="gradient-text">Teklif Alın</span>
+              </h2>
+              <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '28px' }}>
+                Formı doldurun, uzman ekibimiz sizi 30 dakika içinde arasın. Ücretsiz ekspertiz ve anında fiyat teklifi!
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {[
+                  { icon: '🛡️', text: 'Sigortalı Taşımacılık Güvencesi' },
+                  { icon: '⏱️', text: '30 Dakika İçinde Geri Dönüş' },
+                  { icon: '💰', text: 'Rekabetçi Fiyat Garantisi' },
+                  { icon: '⭐', text: 'Google 4.9/5 Müşteri Puanı' },
+                ].map(item => (
+                  <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e2e8f0', fontSize: '0.92rem' }}>
+                    <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>{item.text}
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Sağ: Form */}
+            <div>
+              <IletisimFormu />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ══════════════════ HİZMETLER — BEYAZ ══════════════════ */}
-      <section id="hizmetler" style={{ padding: '100px 24px', background: '#ffffff' }}>
+      <section id="hizmetler" className="section-white" style={{ padding: '100px 24px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <div className="section-badge-light">🚚 Hizmetlerimiz</div>
@@ -332,7 +367,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════ NEDEN BİZ — LACİVERT ══════════════════ */}
-      <section style={{ padding: '100px 24px', background: 'linear-gradient(135deg, #0A1628 0%, #0f2040 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section className="section-navy" style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', background: 'radial-gradient(circle at right, rgba(245,158,11,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -400,7 +435,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════ MÜŞTERİ YORUMLARI — BEYAZ ══════════════════ */}
-      <section style={{ padding: '100px 24px', background: '#f8fafc' }}>
+      <section className="section-light" style={{ padding: '100px 24px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <div className="section-badge-light">💬 Müşteri Yorumları</div>
@@ -497,7 +532,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════ BÖLGELERİMİZ — LACİVERT + 3D ══════════════════ */}
-      <section id="bolgeler" style={{ padding: '100px 24px', background: 'linear-gradient(160deg, #050d1a 0%, #0A1628 50%, #0f2040 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section id="bolgeler" className="section-navy" style={{ padding: '100px 24px', position: 'relative', overflow: 'hidden' }}>
 
         {/* Dekoratif arka plan ışıkları */}
         <div style={{ position: 'absolute', top: '10%', left: '-100px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(250,204,21,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
@@ -611,9 +646,8 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════ CTA BANNER — BEYAZ + ALTIN ══════════════════ */}
-      <section style={{
+      <section className="section-white" style={{
         padding: '100px 24px',
-        background: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',

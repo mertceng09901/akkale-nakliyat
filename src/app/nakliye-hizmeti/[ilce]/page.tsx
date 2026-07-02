@@ -155,29 +155,21 @@ export default async function Page({ params }: { params: Promise<{ ilce: string 
             </div>
           </div>
 
-          {/* MOBİLDE GÖRÜNEN: Kısa iletişim CTA kutusu */}
-          <div className="ilce-mobile-cta">
-            <div style={{
-              background: 'rgba(250,204,21,0.08)',
-              border: '1px solid rgba(250,204,21,0.25)',
-              borderRadius: '16px',
-              padding: '20px',
-              textAlign: 'center',
-              marginTop: '28px',
-            }}>
-              <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '12px' }}>
-                📋 Ücretsiz teklif için hemen arayın:
-              </p>
-              <a href="tel:+905301234567" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <Phone size={16} /> 0530 123 45 67
-              </a>
+          {/* MOBİLDE GÖRÜNEN: Gerçek form */}
+          <div className="ilce-mobile-cta" style={{ marginTop: '32px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '16px' }}>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#ffffff', marginBottom: '6px' }}>
+                Ücretsiz Teklif Al
+              </h2>
+              <p style={{ color: '#64748b', fontSize: '0.85rem' }}>Formu doldurun, sizi hemen arayalım</p>
             </div>
+            <IletisimFormu />
           </div>
         </div>
       </section>
 
       {/* ══════════════ HİZMETLER — BEYAZ ══════════════ */}
-      <section style={{ padding: '80px 20px', background: '#ffffff' }}>
+      <section style={{ padding: '80px 20px' }} className="section-white">
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div className="section-badge-light">🚚 Hizmetlerimiz</div>
@@ -220,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ ilce: string 
       </section>
 
       {/* ══════════════ BİLGİ BÖLÜMÜ — LACİVERT ══════════════ */}
-      <section style={{ padding: '80px 20px', background: 'linear-gradient(135deg, #0A1628 0%, #0f2040 100%)' }}>
+      <section style={{ padding: '80px 20px' }} className="section-navy">
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
           {/* 3D Bilgi Kutusu */}
@@ -285,7 +277,7 @@ export default async function Page({ params }: { params: Promise<{ ilce: string 
       </section>
 
       {/* ══════════════ DİĞER BÖLGELER — BEYAZ ══════════════ */}
-      <section style={{ padding: '60px 20px', background: '#f8fafc' }}>
+      <section style={{ padding: '60px 20px' }} className="section-light">
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <h3 style={{ color: '#0A1628', fontSize: '1rem', fontWeight: 600, marginBottom: '20px', textAlign: 'center' }}>
             Diğer İlçelerde de Hizmet Veriyoruz
