@@ -148,7 +148,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ fontFamily: "'Quicksand', sans-serif" }}>
 
       {/* ══════════════════ HERO — LACİVERT ══════════════════ */}
       <section style={{
@@ -170,9 +170,29 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Dekoratif halkalar */}
-        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '480px', height: '480px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(250,204,21,0.18) 0%, transparent 70%)', zIndex: 1 }} />
-        <div style={{ position: 'absolute', bottom: '-120px', left: '-80px', width: '520px', height: '520px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(30,58,110,0.5) 0%, transparent 70%)', zIndex: 1 }} />
+        {/* Animasyonlu parçacıklar */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', overflow: 'hidden' }}>
+          {[...Array(12)].map((_, i) => (
+            <div key={i} style={{
+              position: 'absolute',
+              width: i % 3 === 0 ? '6px' : i % 3 === 1 ? '4px' : '8px',
+              height: i % 3 === 0 ? '6px' : i % 3 === 1 ? '4px' : '8px',
+              borderRadius: '50%',
+              background: i % 2 === 0 ? 'rgba(250,204,21,0.6)' : 'rgba(255,255,255,0.3)',
+              left: `${8 + (i * 8) % 90}%`,
+              top: `${10 + (i * 13) % 80}%`,
+              animation: `particleFloat${(i % 3) + 1} ${3 + (i % 4)}s ease-in-out ${i * 0.4}s infinite`,
+              filter: 'blur(0.5px)',
+            }} />
+          ))}
+        </div>
+
+        {/* Dekoratif halka — büyük */}
+        <div style={{ position: 'absolute', top: '-120px', right: '-120px', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(250,204,21,0.12) 0%, transparent 60%)', zIndex: 1, animation: 'float 8s ease-in-out infinite' }} />
+        {/* Dekoratif halka — sol alt */}
+        <div style={{ position: 'absolute', bottom: '-150px', left: '-100px', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(30,58,110,0.4) 0%, transparent 70%)', zIndex: 1 }} />
+        {/* İnce ÷rgü deseni */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 1, backgroundImage: 'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }} />
 
         <div className="hero-grid">
 
@@ -184,11 +204,12 @@ export default function HomePage() {
 
             <h1 style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(2.4rem, 5vw, 4rem)',
+              fontSize: 'clamp(2.4rem, 5vw, 4.2rem)',
               fontWeight: 700,
-              lineHeight: 1.15,
+              lineHeight: 1.1,
               marginBottom: '24px',
               color: '#ffffff',
+              letterSpacing: '-0.5px',
             }}>
               <span style={{ display: 'block' }}>Güvenli &amp; Hızlı</span>
               <span className="gradient-text-animated" style={{ display: 'block' }}>
@@ -211,15 +232,25 @@ export default function HomePage() {
             </div>
 
             {/* Güven rozetleri */}
-            <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
               {[
                 { icon: '⭐', text: '4.9/5 Google Puanı' },
                 { icon: '✅', text: '500+ Mutlu Müşteri' },
                 { icon: '🛡️', text: 'Tam Sigorta Güvencesi' },
               ].map((badge) => (
-                <div key={badge.text} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.9rem' }}>
+                <div key={badge.text} style={{
+                  display: 'flex', alignItems: 'center', gap: '8px',
+                  color: '#94a3b8', fontSize: '0.9rem',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '50px',
+                  padding: '8px 16px',
+                  backdropFilter: 'blur(8px)',
+                  fontWeight: 600,
+                  letterSpacing: '0.2px',
+                }}>
                   <span>{badge.icon}</span>
-                  <span>{badge.text}</span>
+                  <span style={{ color: '#cbd5e1' }}>{badge.text}</span>
                 </div>
               ))}
             </div>
@@ -243,8 +274,11 @@ export default function HomePage() {
         background: 'linear-gradient(135deg, #facc15 0%, #eab308 60%, #d97706 100%)',
         padding: '0',
         overflow: 'hidden',
+        position: 'relative',
       }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+        {/* Stripe desen arkaplanı */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
           <div className="stats-grid">
             {[
               { number: 500, suffix: '+', label: 'Mutlu Müşteri', icon: '😊' },
@@ -256,17 +290,18 @@ export default function HomePage() {
                 key={stat.label}
                 className="stat-3d stat-cell"
                 style={{
-                  padding: '44px 24px',
+                  padding: '52px 24px',
                   textAlign: 'center',
                   borderRight: i < 3 ? '1px solid rgba(255,255,255,0.25)' : 'none',
                   cursor: 'default',
+                  position: 'relative',
                 }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{stat.icon}</div>
-                <div style={{ fontSize: '2.8rem', fontWeight: 900, color: '#ffffff', lineHeight: 1, marginBottom: '6px', fontFamily: "'Inter', sans-serif" }}>
+                <div style={{ fontSize: '2.2rem', marginBottom: '10px' }}>{stat.icon}</div>
+                <div style={{ fontSize: '3rem', fontWeight: 900, color: '#ffffff', lineHeight: 1, marginBottom: '8px', fontFamily: "'Quicksand', sans-serif", textShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                   <AnimatedCounter target={stat.number} suffix={stat.suffix} />
                 </div>
-                <div style={{ color: 'rgba(255,255,255,0.88)', fontSize: '0.9rem', fontWeight: 600 }}>{stat.label}</div>
+                <div style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.92rem', fontWeight: 700, letterSpacing: '0.5px' }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -324,40 +359,40 @@ export default function HomePage() {
             {services.map((service, i) => (
               <Link key={service.title} href={service.href} style={{ textDecoration: 'none' }}>
                 <div
-                  className="light-card"
+                  className="premium-card spotlight-card"
                   style={{
                     padding: '36px',
                     cursor: 'pointer',
                     animation: `fadeInUp 0.6s ease ${i * 0.1}s both`,
-                    position: 'relative',
-                    overflow: 'hidden',
                     height: '100%',
                   }}
                 >
                   {/* Renk şeridi */}
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: `linear-gradient(90deg, ${service.color}, transparent)`, borderRadius: '16px 16px 0 0' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: `linear-gradient(90deg, ${service.color}, transparent)`, borderRadius: '20px 20px 0 0' }} />
 
                   <div style={{
-                    width: '64px', height: '64px',
-                    background: `${service.color}20`,
-                    border: `2px solid ${service.color}50`,
-                    borderRadius: '16px',
+                    width: '68px', height: '68px',
+                    background: `${service.color}18`,
+                    border: `2px solid ${service.color}40`,
+                    borderRadius: '18px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '20px',
+                    marginBottom: '22px',
                     color: service.color,
+                    boxShadow: `0 8px 24px ${service.color}20`,
+                    transition: 'all 0.3s ease',
                   }}>
                     {service.icon}
                   </div>
 
-                  <h3 style={{ color: '#0A1628', fontSize: '1.15rem', fontWeight: 700, marginBottom: '12px', fontFamily: "'Playfair Display', serif" }}>
+                  <h3 style={{ color: '#0A1628', fontSize: '1.18rem', fontWeight: 700, marginBottom: '12px', fontFamily: "'Playfair Display', serif", letterSpacing: '0.2px' }}>
                     {service.title}
                   </h3>
-                  <p style={{ color: '#64748b', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '20px' }}>
+                  <p style={{ color: '#64748b', fontSize: '0.92rem', lineHeight: 1.75, marginBottom: '24px', fontFamily: "'Quicksand', sans-serif" }}>
                     {service.desc}
                   </p>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: service.color, fontSize: '0.85rem', fontWeight: 700 }}>
-                    Detaylı Bilgi <span>→</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: service.color, fontSize: '0.88rem', fontWeight: 700, letterSpacing: '0.3px' }}>
+                    Detaylı Bilgi <span style={{ transition: 'transform 0.2s', display: 'inline-block' }}>→</span>
                   </div>
                 </div>
               </Link>

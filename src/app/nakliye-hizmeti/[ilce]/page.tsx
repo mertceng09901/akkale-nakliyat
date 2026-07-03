@@ -47,7 +47,7 @@ export default async function Page({ params }: { params: Promise<{ ilce: string 
   ];
 
   return (
-    <div>
+    <div style={{ fontFamily: "'Quicksand', sans-serif" }}>
 
       {/* ══════════════ HERO — LACİVERT ══════════════ */}
       <section style={{

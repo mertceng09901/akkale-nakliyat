@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, Truck, Shield } from "lucide-react";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Akkale Nakliyat | İstanbul Evden Eve Nakliyat",
@@ -30,11 +27,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen`} style={{ background: '#ffffff', color: '#1e293b' }}>
+      <body className="flex flex-col min-h-screen" style={{ background: '#ffffff', color: '#1e293b', fontFamily: "'Quicksand', sans-serif" }}>
 
         {/* GLOBAL NAVBAR */}
         <header style={{
